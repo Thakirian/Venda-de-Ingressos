@@ -1,0 +1,8 @@
+<h2>Minhas Compras</h2>
+<ul>
+  {{#each compras}}
+    <li>
+      <a href="/ingresso/{{this.id}}">{{this.nome}}</a> - Quantidade: {{this.quantidade}}, Total: R$ {{this.precoTotal}}
+    </li>
+  {{/each}}
+</ul>

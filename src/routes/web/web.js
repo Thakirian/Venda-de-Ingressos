@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 
-// Rota de Login
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Login' });
 });
@@ -24,13 +23,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Rota de Logout
+
 router.get('/logout', (req, res) => {
   res.clearCookie('token');
   res.redirect('/');
 });
 
-// Rota de Minhas Compras
 router.get('/minhas-compras', async (req, res) => {
   const token = req.cookies.token;
   if (!token) {
@@ -45,7 +43,7 @@ router.get('/minhas-compras', async (req, res) => {
   res.render('compras', { title: 'Minhas Compras', compras });
 });
 
-// Rota de Visualização de Ingresso
+
 router.get('/ingresso/:id', async (req, res) => {
   const token = req.cookies.token;
   if (!token) {
